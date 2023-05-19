@@ -43,18 +43,18 @@ app.post('/student', async (req, res) => {
 
 app.get('/student', async (req, res) => {
     const LIMIT = req.query.limit || 10;
-    const PAGE = req.query.page || 1;
+    const CUURENTPAGE = req.query.page || 1;
     const totalRecords = await Student.countDocuments();
     const totalPages = Math.ceil(totalRecords / LIMIT);
    
-    const students = await Student.find().skip((PAGE-1)*LIMIT).limit(LIMIT);
+    const students = await Student.find().skip((CUURENTPAGE-1)*LIMIT).limit(LIMIT);
 
     res.json({
         success: true,
         message: "Students fetched successfully",
         totalPages,
         limit: LIMIT,
-        page: PAGE,
+        cuurentPage: CUURENTPAGE,
         data: students
     })
 })

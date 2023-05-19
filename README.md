@@ -16,7 +16,11 @@ Pagination is a technique used in websites or applications to display a large am
 
 2. **Page Navigation:** Pagination includes controls that allow users to navigate between pages. These controls often include buttons for the first page, previous page, next page, and last page. Clicking on these buttons loads the corresponding page of data.
 
-3. **Cuurent Page:** To help users understand their current position within the dataset, pagination often includes page indicators. These indicators show the total number of pages available and highlight the current page being viewed. Users can click on specific page numbers to directly navigate to a particular page.
+3. **Current Page:** To help users understand their current position within the dataset, pagination often includes page indicators. These indicators show the total number of pages available and highlight the current page being viewed. Users can click on specific page numbers to directly navigate to a particular page.
+
+**Output:**
+
+<img src='./screenshot-1.png' width="400px"/>
 
 ## Conclusion 
 
