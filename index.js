@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from 'mongoose';
 import dotennv from 'dotenv';
 
+import Student from './models/student.js'
+
 dotennv.config();
 const app = express();
 app.use(express.json());
@@ -18,6 +20,24 @@ try {
 
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK' });
+})
+
+app.post('/student', async(req, res) => {
+    const {fullName, email, mobile} = req.body;
+
+    const newStudent = new Student({
+        fullName,
+        email,
+        mobile
+    })
+
+    const savedStudent = await newStudent.save();
+
+    res.json({
+        status: "success",
+        message: 'Student Saved Successfully',
+        data: savedStudent
+    })
 })
 
 app.listen(PORT, () => {
