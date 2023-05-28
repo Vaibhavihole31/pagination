@@ -22,6 +22,10 @@ Pagination is a technique used in websites or applications to display a large am
 
 <img src='./screenshot-1.png' width="400px"/>
 
+<img src='./screenshot-3.png' width="400px"/>
+
+<img src='./screenshot-2.png' width="400px"/>
+
 ## Conclusion 
 
 By implementing pagination, you can present large datasets in a more organized and manageable way, enhancing the user experience and improving the performance of your application.
