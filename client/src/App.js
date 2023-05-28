@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 
+import './App.css';
+
 const App = () => {
   const [students, setStudents] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
@@ -30,13 +32,24 @@ const App = () => {
   return (
     <div>
       <h1>Students</h1>
-      <ul>
-        {students.map((student) => (
-          <li key={student.id}>
-            {student.fullName} - {student.email} - {student.mobile}
-          </li>
-        ))}
-      </ul>
+      <table className="students-table">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((student) => (
+            <tr key={student.id}>
+              <td>{student.fullName}</td>
+              <td>{student.email}</td>
+              <td>{student.mobile}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
       <ReactPaginate
         pageCount={totalPages}
