@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div>
       <h1>Students</h1>
-      <table className="students-table">
+      <table border="1" className="students-table">
         <thead>
           <tr>
             <th>Full Name</th>
