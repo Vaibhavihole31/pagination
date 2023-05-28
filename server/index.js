@@ -1,6 +1,8 @@
 import express from "express";
 import mongoose from 'mongoose';
 import dotennv from 'dotenv';
+import path from 'path';
+const __dirname = path.resolve();
 
 import Student from './models/student.js'
 
@@ -58,6 +60,14 @@ app.get('/student', async (req, res) => {
         data: students
     })
 })
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+    });
+  }
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT} 🚀`);
